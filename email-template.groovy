@@ -113,6 +113,8 @@ actions.each() { action ->
         execDateTcPairs << [execDate, tc]
         }
         // primary sort execDate, secondary displayName
+        execDateTcPairs = execDateTcPairs.sort{ a,b -> a[1].displayName <=> b[1].displayName }
+        execDateTcPairs = execDateTcPairs.sort{ a,b -> a[0] <=> b[0] }          
         def i = 1
         execDateTcPairs.each() {
         def execDate = it[0]
